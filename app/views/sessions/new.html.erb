@@ -1,0 +1,10 @@
+<h1> Sign in: </h1>
+
+<!-- need to change name field to a dropdown menu showing all existing users' names -->
+<%= form_tag('/signin', method: :post) do  %>
+  <%= label_tag 'name'%>
+  <%= text_field_tag 'name'%> <br>
+
+  <%= label_tag 'password'%>
+  <%= password_field_tag 'password'%>
+<% end %>
