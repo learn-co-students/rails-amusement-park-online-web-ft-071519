@@ -9,7 +9,7 @@ You're going to be building an amusement park. There will be users, attractions,
 ## Instructions
 
 - Check out [The Demo](https://flatiron-amusement-park.herokuapp.com/) to see where this lab is headed.
-- This is a test driven lab. Check out the model tests and get those to pass before moving onto the feature specs.
+- This is a test driven lab, check out the model tests and get those to pass before moving onto the feature specs.
 - Remember, if you use scaffolds or generators do **_not_** overwrite the model specs that are included in this lab. Always use the `--no-test-framework` flag and enter `n` or `no` when prompted to overwrite the model specs for this lab.
 
 **A hint about requiring a password**: ActiveRecord comes with a handy `has_secure_password` attribute that you can set on a model. It requires that you enable the `bcrypt` gem and that you add a `password_digest` column to your model. You can read more about [`has_secure_password` here](http://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html).
