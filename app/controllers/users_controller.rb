@@ -6,10 +6,11 @@ class UsersController < ApplicationController
 
     def create
       #binding.pry
-      @user = User.create(user_params)
+      @user = User.new(user_params)
       if @user.save
-        redirect_to user_path(@user)
         session[:user_id] = @user.id
+        #binding.pry
+        redirect_to @user
       else 
         render :new
       end
