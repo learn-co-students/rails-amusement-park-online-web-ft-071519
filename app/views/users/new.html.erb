@@ -1,0 +1,27 @@
+<h1>New User</h1>
+<%= form_for @user do |f| %>
+
+  <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  <br>
+    <%= f.label :password %><br>
+    <%= f.text_field :password %>
+  <br>
+    <%= f.label :height %><br>
+    <%= f.number_field :height %>
+  <br>
+    <%= f.label :tickets %><br>
+    <%= f.number_field :tickets %>
+  <br>
+    <%= f.label :happiness %><br>
+    <%= f.number_field :happiness %>
+  <br>
+    <%= f.label :nausea %><br>
+    <%= f.number_field :nausea %>
+  <br>
+    <%= f.label :admin, "Park Owner" %>
+    <%= f.check_box :admin %>
+  <br>
+  <%= f.submit %>
+
+<% end %>
