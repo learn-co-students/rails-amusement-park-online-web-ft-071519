@@ -13,6 +13,7 @@ class Ride < ActiveRecord::Base
       elsif user.height < attraction.min_height
         "Sorry. You are not tall enough to ride the Roller Coaster."
       else
+        #flash[:thanks] = "Thanks for riding the #{self.name}!"
         user.happiness += attraction.happiness_rating
         user.nausea += attraction.nausea_rating
         user.tickets -= attraction.tickets

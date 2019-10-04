@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show, :index]
 
   resources :attractions, only: [:index, :show]
+
+  resources :rides, only: [:new, :create]
 end
