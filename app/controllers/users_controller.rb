@@ -1,5 +1,6 @@
+require 'pry'
 class UsersController < ApplicationController
-  before_action :require_login, only: :show
+  before_action :require_login, only: [:show, :update]
   def new
     @user = User.new
   end
@@ -22,11 +23,18 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :password, :nausea, :happiness, :tickets, :height, :admin)
+    params.require(:user).permit(
+        :name,
+        :password,
+        :nausea,
+        :happiness,
+        :tickets,
+        :height,
+        :admin)
   end
 
-  def require_login
-    redirect_to root_path unless session.include? :user_id
+  def ride_params
+    params.require(:ride).permit(:user_id, :attraction_id)
   end
 
 end

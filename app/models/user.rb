@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
   def mood
     nausea > happiness ? 'sad' : 'happy'
   end
+
+  def is_admin?
+    admin
+  end
 end
