@@ -5,7 +5,14 @@
 <tbody>
 <tr><td><strong>Name </strong></td> <td><strong>Tickets </strong></td><td><strong>Details </strong></td></tr>
   <% @attractions.each do |a|%>
-    <tr><td><%= a.name%> </td> <td><%= a.tickets%> </td> <td><%= a.name%> </td> <td><a href="/attractions/<%=a.id%>">Go on <%= a.name %> </a></td></tr>
+    <tr><td><%= a.name%> </td>
+     <td><%= a.tickets%> </td> 
+     <td><%= a.name%> </td>
+    <% if @current_user.admin %>
+    <td> <a href="/attractions/<%=a.id%>">Show <%= a.name %> </a></td>
+    <% else %> 
+    <td><a href="/attractions/<%=a.id%>">Go on <%= a.name %> </a></td></tr>
+    <% end %>
   <% end %>
 </tbody>
 </table>
