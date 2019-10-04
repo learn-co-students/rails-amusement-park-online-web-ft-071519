@@ -11,13 +11,13 @@ class Ride < ActiveRecord::Base
       elsif user.tickets < attraction.tickets
         "Sorry. You do not have enough tickets to ride the #{attraction.name}."
       elsif user.height < attraction.min_height
-        "Sorry. You are not tall enough to ride the Roller Coaster."
+        "Sorry. You are not tall enough to ride the #{attraction.name}."
       else
-        #flash[:thanks] = "Thanks for riding the #{self.name}!"
         user.happiness += attraction.happiness_rating
         user.nausea += attraction.nausea_rating
         user.tickets -= attraction.tickets
         user.save
+        "Thanks for riding the #{self.attraction.name}!"
       end
     end
 
